@@ -86,8 +86,6 @@ def main():
     elif args.number:
         log.info("desire number of report")
         from modules import manageReports
-        # print(args.environment)
-        # print(args.number)
         manageReports.numberOfReports(args.environment, args.number)
         exit(0)
 
