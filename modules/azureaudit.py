@@ -1840,6 +1840,7 @@ def persistent_files():
 
 
 def azure_audit():
+    
     subprocess.call(['mkdir', '-p', 'reports/AZURE/%s/%s/final_report' % (account_name, timestmp)])
     automatic_provising_agent()
     system_update()
@@ -1900,13 +1901,13 @@ def azure_audit():
     json_to_html('./reports/AZURE/%s/%s/logging_monitoring.json' % (account_name, timestmp),
                         'reports/AZURE/%s/%s/final_report/logging_monitoring.html' % (account_name, timestmp))
     json_to_html('./reports/AZURE/%s/%s/network.json' % (account_name, timestmp),
-                 'reports/AZURE/%s/%s/final_report/network.html' % (account_name, timestmp))
+                'reports/AZURE/%s/%s/final_report/network.html' % (account_name, timestmp))
     json_to_html('./reports/AZURE/%s/%s/vm.json' % (account_name, timestmp),
-                 'reports/AZURE/%s/%s/final_report/vm.html' % (account_name, timestmp))
+                'reports/AZURE/%s/%s/final_report/vm.html' % (account_name, timestmp))
     json_to_html('./reports/AZURE/%s/%s/vault.json' % (account_name, timestmp),
-                 'reports/AZURE/%s/%s/final_report/vault.html' % (account_name, timestmp))
+                'reports/AZURE/%s/%s/final_report/vault.html' % (account_name, timestmp))
     json_to_html('./reports/AZURE/%s/%s/sql_db.json' % (account_name, timestmp),
-                 'reports/AZURE/%s/%s/final_report/sql_db.html' % (account_name, timestmp))
+                'reports/AZURE/%s/%s/final_report/sql_db.html' % (account_name, timestmp))
     merge_json()
     persistent_files()
     subprocess.check_output(
@@ -1916,3 +1917,6 @@ def azure_audit():
                     % (account_name, timestmp))
     fin = os.path.realpath("./reports/AZURE/%s/%s/final_report/report_azure.html") % (account_name, timestmp)
     print ("THE FINAL REPORT IS LOCATED AT -------->  %s" % (fin))
+
+    
+    
