@@ -34,7 +34,7 @@ def delete_folder(directory, number):
         logging.exception(identifier)
 
 
-def retain_reports(enviroment, number):
+def retain_number_of_reports(enviroment, number):
     """Function to retain reports on the basis days"""
     aws_report_path = 'reports/AWS/aws_audit'
     gcp_report_path = 'reports/GCP'

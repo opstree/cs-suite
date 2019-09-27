@@ -99,7 +99,7 @@ def main():
 
     if args.number > 0 and args.wipe == False:
         from modules import retainnumberofreports
-        retainnumberofreports.retain_reports(args.environment, int(args.number))
+        retainnumberofreports.retain_number_of_reports(args.environment, int(args.number))
         exit(0)
 
 
