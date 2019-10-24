@@ -97,7 +97,7 @@ def main():
 
     if args.number > 0 and args.wipe == False:
         from modules import retainnumberofreports
-        retainnumberofreports.retain_reports(args.environment, int(args.number))
+        retainnumberofreports.retain_reports(args.environment, int(args.number), args.project_id )
         exit(0)
 
 if __name__ == '__main__':
