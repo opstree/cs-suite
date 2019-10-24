@@ -8,6 +8,8 @@ import pathlib
 import glob
 import shutil
 import logging
+from .. import cs 
+
 
 def get_folders_list(directory, number):
     """Function to get folder list"""
@@ -31,7 +33,7 @@ def delete_folder(directory, number):
         logging.exception(identifier)
 
 
-def retain_reports(enviroment, number):
+def retain_reports(enviroment, number,project_name):
     """Function to retain reports on the basis days"""
     aws_report_path = 'reports/AWS/aws_audit'
     gcp_report_path = 'reports/GCP'
@@ -47,7 +49,7 @@ def retain_reports(enviroment, number):
 
     elif enviroment == 'gcp':
         from modules import gcpaudit
-        clean_reports(current_path, gcp_report_path, number, gcpaudit.project_name)
+        clean_reports(current_path, gcp_report_path, number, project_name)
 
 
 def clean_reports(current_path, cloud_report_default_path, number, account_name):

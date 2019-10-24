@@ -8,6 +8,7 @@ import rm
 import subprocess
 from modules import config
 
+
 def main():
     """ main function """
     parser = argparse.ArgumentParser(description='this is to get IP address for lynis audit only')
@@ -97,7 +98,7 @@ def main():
 
     if args.number > 0 and args.wipe == False:
         from modules import retainnumberofreports
-        retainnumberofreports.retain_reports(args.environment, int(args.number))
+        retainnumberofreports.retain_reports(args.environment, int(args.number),args.project_name)
         exit(0)
 
 if __name__ == '__main__':
